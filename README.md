@@ -42,20 +42,25 @@ Model Performance:
 ![image](https://github.com/user-attachments/assets/c3fc6ccb-7c59-4a0c-937b-f31ddd43354b)
 
 
-Compared model's predictions with the actual classification in the testing set using a confusion matrix.
+Compared model's predictions with the actual classification in the testing set using a confusion matrix: 88% accuracy
 ![image](https://github.com/user-attachments/assets/b3876103-93f3-40bb-a037-3bba2685c8b1)
 
 
 <h3>Transfer Learning</h3>
 
   - Implemented VGG16 and ResNet18, two pre-trained deep learning models, to leverage their feature extraction capabilities:
-    - VGG16: Known for its deeper architecture, this model efficiently captured spatial hierarchies in the tomato leaf images.
-    - ResNet18: Leveraged residual connections to overcome vanishing gradient issues and achieve faster convergence.
+    - VGG16
+        - Consists of 16 weight layers (13 convolutional layers and 3 fully connected layers).
+        - Simple and can extract features well.
+        - Efficiently captured spatial hierarchies in the tomato leaf images.
+    - ResNet18
+        - A 18-layer deep Residual Neural Network.
+        - Leveraged residual connections to overcome vanishing gradient issues and achieve faster convergence.
   - Fine-tuned the pre-trained models on the tomato leaf dataset by:
-    - Replacing the final fully connected layers with custom layers for the classification task.
+    - Replacing the final fully connected layers with a custom layer for the classification task (10 classes).
     - Freezing the initial layers of the pre-trained models to retain general image features while allowing fine-tuning on tomato-specific data.
     - Compared the performance of these models to evaluate trade-offs between accuracy and computational efficiency.
-    - Utimately used 400 epochs for final model, in the future could use more if no GPU limit
+    - Utimately used 400 epochs for final model, in the future could use more if no GPU limit.
 
 Confusion matricies : 
 <h4>VGG16: 89.5% accuracy </h4>
